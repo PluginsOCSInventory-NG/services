@@ -1,0 +1,10 @@
+{
+  "displayName" : "Services Windows",
+  "author" : ["Benoit SARDA", "Gilles DUBOIS"],
+  "contributor" : [],
+  "supportedAgent" : ["Windows"],
+  "description" : {
+    "fr" : "Remonte les services Windows",
+    "en" : "Retrieve Windows services"
+  }
+}
