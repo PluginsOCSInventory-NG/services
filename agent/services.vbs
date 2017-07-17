@@ -203,16 +203,16 @@ Set listServices = objWMIService.ExecQuery("Select * From Win32_Service",,48)
  
 ' le loop, pour chaque service
 For Each objService In listServices
-	WScript.Echo "<SERVICE>"
-	WScript.Echo "<SVCNAME>" & objService.Name & "</SVCNAME>"
-	WScript.Echo "<SVCDN>" & replaceSpecialCar(objService.DisplayName) & "</SVCDN>"
-	WScript.Echo "<SVCSTATE>" & objService.State & "</SVCSTATE>"
-	' on oublie pas de supprimer les caractères spéciaux
-	WScript.Echo "<SVCDESC>" & replaceSpecialCar(objService.Description) & "</SVCDESC>"
-	WScript.Echo "<SVCSTARTMODE>" & objService.StartMode & "</SVCSTARTMODE>"
-	WScript.Echo "<SVCPATH>" & objService.PathName & "</SVCPATH>"
-	WScript.Echo "<SVCSTARTNAME>" & objService.StartName & "</SVCSTARTNAME>"
-	WScript.Echo "<SVCEXITCODE>" & objService.ExitCode & "</SVCEXITCODE>"
-	WScript.Echo "<SVCSPECEXITCODE>" & objService.ServiceSpecificExitCode & "</SVCSPECEXITCODE>"
-	WScript.Echo "</SERVICE>"
+	WScript.Echo _
+			"<SERVICE>" & VbCrLf &_
+			"<SVCNAME>" & objService.Name & "</SVCNAME>" & VbCrLf &_
+			"<SVCDN>" & replaceSpecialCar(objService.DisplayName) & "</SVCDN>" & VbCrLf &_
+			"<SVCSTATE>" & objService.State & "</SVCSTATE>" & VbCrLf &_
+			"<SVCDESC>" & replaceSpecialCar(objService.Description) & "</SVCDESC>" & VbCrLf &_
+			"<SVCSTARTMODE>" & objService.StartMode & "</SVCSTARTMODE>" & VbCrLf &_
+			"<SVCPATH>" & objService.PathName & "</SVCPATH>" & VbCrLf &_
+			"<SVCSTARTNAME>" & objService.StartName & "</SVCSTARTNAME>" & VbCrLf &_
+			"<SVCEXITCODE>" & objService.ExitCode & "</SVCEXITCODE>" & VbCrLf &_
+			"<SVCSPECEXITCODE>" & objService.ServiceSpecificExitCode & "</SVCSPECEXITCODE>" & VbCrLf &_
+			"</SERVICE>"
 Next
